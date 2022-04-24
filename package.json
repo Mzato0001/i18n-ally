@@ -1,8 +1,8 @@
 {
-  "publisher": "lokalise",
-  "name": "i18n-ally",
+  "publisher": "mzato0001",
+  "name": "sapphire-i18n-ally",
   "version": "2.8.1",
-  "displayName": "i18n Ally",
+  "displayName": "Sapphire i18n Ally",
   "description": "🌍 All in one i18n extension for VS Code",
   "keywords": [
     "vue",
@@ -13,7 +13,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/lokalise/i18n-ally"
+    "url": "https://github.com/Mzato0001/i18n-ally"
   },
   "main": "./dist/extension",
   "scripts": {
