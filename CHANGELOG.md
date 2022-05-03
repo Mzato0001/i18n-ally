@@ -2,6 +2,27 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.9.0](https://github.com/Mzato0001/i18n-ally/compare/v2.8.1...v2.9.0) (2022-05-03)
+
+
+### 📚 Documentations
+
+* change links ([022e071](https://github.com/Mzato0001/i18n-ally/commit/022e071cd29adddfe7a25695a139e98ad7441e1e))
+
+
+### 🐞 Bug Fixes
+
+* i18next greedy namespace regex ([533d16a](https://github.com/Mzato0001/i18n-ally/commit/533d16a32dc90ab27c4c6743c164a0c69d1533be))
+* sapphire-i18next regex ([086d2fa](https://github.com/Mzato0001/i18n-ally/commit/086d2fab97a5e38875b9f71a425436b3858f32bd))
+* sapphire-i18next regex ([04deec0](https://github.com/Mzato0001/i18n-ally/commit/04deec0b9d952d0c707c0264a51b065fded437f5))
+* sapphire-i18next regex ([faf044c](https://github.com/Mzato0001/i18n-ally/commit/faf044cbcc380170ec180c80de82a3cb036e366d))
+
+
+### ⚡ Features
+
+* add support for sapphire-i18next ([0493e74](https://github.com/Mzato0001/i18n-ally/commit/0493e74f54c7d3dd99792dca8495b67b1d21526c))
+* supports getT function ([9ec6394](https://github.com/Mzato0001/i18n-ally/commit/9ec63943eaf6c2b43380566adfe7e41e1d07040a))
+
 ### [2.8.1](https://github.com/lokalise/i18n-ally/compare/v2.8.0...v2.8.1) (2021-09-13)
 
 
