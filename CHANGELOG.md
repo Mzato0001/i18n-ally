@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.9.1](https://github.com/Mzato0001/i18n-ally/compare/v2.9.0...v2.9.1) (2022-05-05)
+
+
+### 🐞 Bug Fixes
+
+* getT regex ([99f57c0](https://github.com/Mzato0001/i18n-ally/commit/99f57c0baae6346fba654a92a85c75c97e3ac924))
+
 ## [2.9.0](https://github.com/Mzato0001/i18n-ally/compare/v2.8.1...v2.9.0) (2022-05-03)
 
 
