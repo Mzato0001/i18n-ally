@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.9.4](https://github.com/Mzato0001/i18n-ally/compare/v2.9.3...v2.9.4) (2022-05-07)
+
+
+### ⚡ Features
+
+* sapphire-i18next regex and options ([0fc92bd](https://github.com/Mzato0001/i18n-ally/commit/0fc92bdb1cec001d26a12aa1f04e0e560688f22c))
+
 ### [2.9.3](https://github.com/Mzato0001/i18n-ally/compare/v2.9.2...v2.9.3) (2022-05-07)
 
 
