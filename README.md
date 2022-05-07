@@ -100,6 +100,16 @@ As a collaborative productivity platform, it helps structure and automate the tr
 - Supports [linked locale messages](https://kazupon.github.io/vue-i18n/guide/messages.html#linked-locale-messages)
 - Uses i18n for the extension itself, of course. [Translation List](https://github.com/lokalise/i18n-ally#-multilingual-support)
 
+## Required options for Sapphire users
+```json {:copy}
+{
+    "i18n-ally.displayLanguage": "en-US", // put your language
+    "i18n-ally.pathMatcher": "{locale}/{namespaces}.json", // see https://github.com/lokalise/i18n-ally/wiki/Path-Matcher
+    "i18n-ally.namespace": true,
+    "i18n-ally.preferredDelimiter": ":",
+    "i18n-ally.enabledFrameworks": ["sapphire-i18next"],
+}
+```
 
 ## 🌍 Multilingual Support
 
