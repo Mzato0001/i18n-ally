@@ -4,7 +4,7 @@ import { keypathValidate } from '../../utils/keypathValidate'
 import { Log } from '~/utils'
 import { LocaleTreeItem } from '~/views'
 import i18n from '~/i18n'
-import { Node, CurrentFile, PendingWrite } from '~/core'
+import { Node, CurrentFile, PendingWrite, Config } from '~/core'
 
 export async function DuplicateKey(item?: LocaleTreeItem | string) {
   if (!item)
@@ -22,11 +22,13 @@ export async function DuplicateKey(item?: LocaleTreeItem | string) {
 
   try {
     const oldkeypath = node.keypath
-    const newkeypath = await window.showInputBox({
+    let newkeypath = await window.showInputBox({
       value: oldkeypath,
       prompt: i18n.t('prompt.enter_new_keypath'),
       ignoreFocusOut: true,
     })
+
+    if (Config.enabledFrameworks?.includes('sapphire-i18next')) newkeypath = newkeypath?.replace(/[:/]/g, '.')
 
     if (!newkeypath)
       return

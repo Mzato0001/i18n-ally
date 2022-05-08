@@ -67,10 +67,22 @@ async function ExtractOrInsertCommnad(options?: ExtractTextOptions, detection?: 
     = isInsert
       ? []
       : loader.keys
-        .map(key => ({
-          description: loader.getValueByKey(key, Config.sourceLanguage, 0),
-          keypath: key,
-        }))
+        .map((key) => {
+          if (Config.enabledFrameworks?.includes('sapphire-i18next')) {
+            const namespace = (loader.flattenLocaleTree[key].meta?.namespace as string).replace(/\./g, '/')
+            let sapphireKey = key.split('.').slice(namespace.split('/').length).join('.')
+            sapphireKey = `${namespace}:${sapphireKey}`
+            return {
+              description: loader.getValueByKey(key, Config.sourceLanguage, 0),
+              keypath: sapphireKey,
+            }
+          }
+
+          return {
+            description: loader.getValueByKey(key, Config.sourceLanguage, 0),
+            keypath: key,
+          }
+        })
         .filter(item => item.description === text)
         .map(i => ({
           ...i,
@@ -132,10 +144,11 @@ async function ExtractOrInsertCommnad(options?: ExtractTextOptions, detection?: 
       window.showWarningMessage(i18n.t('prompt.extraction_canceled'))
       return
     }
-    if (!keypathValidate(keypath))
+    if (!keypathValidate(keypath) && !Config.enabledFrameworks?.includes('sapphire-i18next'))
       return window.showWarningMessage(i18n.t('prompt.invalid_keypath'))
 
-    const writeKeypath = CurrentFile.loader.rewriteKeys(keypath, 'write', { locale })
+    let writeKeypath = CurrentFile.loader.rewriteKeys(keypath, 'write', { locale })
+    if (Config.enabledFrameworks?.includes('sapphire-i18next')) writeKeypath = keypath
 
     let shouldOverride = 'skip'
     if (checkOverride) {

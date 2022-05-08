@@ -14,6 +14,8 @@ export async function NewKey(keypath?: string) {
       ignoreFocusOut: true,
     })
 
+    if (Config.enabledFrameworks?.includes('sapphire-i18next')) keypath = keypath?.replace(/[:/]/g, '.')
+
     if (!keypath)
       return
 
