@@ -8,7 +8,7 @@ import { regexFindKeys } from '~/utils'
 import { KeyInDocument, CurrentFile } from '~/core'
 
 export interface KeyUsages {
-  type: 'code'| 'locale'
+  type: 'code' | 'locale'
   keys: KeyInDocument[]
   locale: string
   namespace?: string
@@ -37,7 +37,9 @@ export class KeyDetector {
     for (const regex of regs) {
       const range = document.getWordRangeAtPosition(position, regex)
       if (range) {
-        const key = document.getText(range).replace(regex, '$1')
+        let key = document.getText(range).replace(regex, '$1')
+
+        if (Config.enabledFrameworks?.includes('sapphire-i18next')) key = key.replace(/[:/]/g, '.')
 
         if (dotEnding) {
           if (!key || key.endsWith('.'))
@@ -86,7 +88,7 @@ export class KeyDetector {
 
   static getKeys(document: TextDocument | string, regs?: RegExp[], dotEnding?: boolean, scopes?: ScopeRange[]): KeyInDocument[] {
     let text = ''
-    let rewriteContext: RewriteKeyContext| undefined
+    let rewriteContext: RewriteKeyContext | undefined
     let filepath = ''
     if (typeof document !== 'string') {
       filepath = document.uri.fsPath
