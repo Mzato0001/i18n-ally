@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.9.7](https://github.com/Mzato0001/i18n-ally/compare/v2.9.6...v2.9.7) (2022-05-08)
+
+
+### ⚡ Features
+
+* manipulations ([e8cee32](https://github.com/Mzato0001/i18n-ally/commit/e8cee32c9f9037a0f851e0aa36dbafd7aeb784f6))
+
 ### [2.9.6](https://github.com/Mzato0001/i18n-ally/compare/v2.9.5...v2.9.6) (2022-05-08)
 
 
