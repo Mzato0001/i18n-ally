@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.9.5](https://github.com/Mzato0001/i18n-ally/compare/v2.9.4...v2.9.5) (2022-05-08)
+
+
+### ⚡ Features
+
+* completion for sapphire ([b691b7e](https://github.com/Mzato0001/i18n-ally/commit/b691b7e13fb97676f442bbf88c7a09695abfc6e5))
+* pathMatcher and refactorTemplates for sapphire ([158b612](https://github.com/Mzato0001/i18n-ally/commit/158b612a38c03b187b3a40b7e1674937b488a9c4))
+
 ### [2.9.4](https://github.com/Mzato0001/i18n-ally/compare/v2.9.3...v2.9.4) (2022-05-07)
 
 
