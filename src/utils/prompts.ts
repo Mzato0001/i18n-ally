@@ -14,10 +14,22 @@ export async function promptEdit(keypath: string, locale: string, value?: string
 
 export async function promptKeys(text: string, locale = Config.displayLanguage) {
   const result = await window.showQuickPick(
-    CurrentFile.loader.keys.map(key => ({
-      label: key,
-      description: CurrentFile.loader.getValueByKey(key, locale, 30),
-    })),
+    CurrentFile.loader.keys.map((key) => {
+      if (Config.enabledFrameworks?.includes('sapphire-i18next')) {
+        const namespace = (CurrentFile.loader.flattenLocaleTree[key].meta?.namespace as string).replace(/\./g, '/')
+        let sapphireKey = key.split('.').slice(namespace.split('/').length).join('.')
+        sapphireKey = `${namespace}:${sapphireKey}`
+        return {
+          label: sapphireKey,
+          description: CurrentFile.loader.getValueByKey(key, locale, 30),
+        }
+      }
+
+      return {
+        label: key,
+        description: CurrentFile.loader.getValueByKey(key, locale, 30),
+      }
+    }),
     {
       matchOnDescription: true,
       placeHolder: text,

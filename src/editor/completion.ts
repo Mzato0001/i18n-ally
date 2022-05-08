@@ -1,6 +1,6 @@
 import { CompletionItemProvider, TextDocument, Position, CompletionItem, CompletionItemKind, languages } from 'vscode'
 import { ExtensionModule } from '~/modules'
-import { Global, KeyDetector, Loader, CurrentFile, LocaleTree, LocaleNode } from '~/core'
+import { Global, KeyDetector, Loader, CurrentFile, LocaleTree, LocaleNode, Config } from '~/core'
 
 class CompletionProvider implements CompletionItemProvider {
   public provideCompletionItems(
@@ -20,6 +20,15 @@ class CompletionProvider implements CompletionItemProvider {
       return Object
         .values(CurrentFile.loader.keys)
         .map((key) => {
+          if (Config.enabledFrameworks?.includes('sapphire-i18next')) {
+            const namespace = (CurrentFile.loader.flattenLocaleTree[key].meta?.namespace as string).replace(/\./g, '/')
+            let sapphireKey = key.split('.').slice(namespace.split('/').length).join('.')
+            sapphireKey = `${namespace}:${sapphireKey}`
+            const item = new CompletionItem(sapphireKey, CompletionItemKind.Text)
+            item.detail = loader.getValueByKey(key)
+            return item
+          }
+
           const item = new CompletionItem(key, CompletionItemKind.Text)
           item.detail = loader.getValueByKey(key)
           return item
