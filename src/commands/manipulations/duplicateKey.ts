@@ -46,7 +46,7 @@ export async function DuplicateKey(item?: LocaleTreeItem | string) {
       .map((v) => {
         return ({
           value: v.value,
-          keypath: newkeypath,
+          keypath: newkeypath as string,
           filepath: v.filepath,
           locale: v.locale,
         })

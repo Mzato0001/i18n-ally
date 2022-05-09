@@ -64,6 +64,6 @@ export async function NewKey(keypath?: string) {
     }
   }
   catch (err) {
-    Log.error(err.toString())
+    Log.error(err)
   }
 }
