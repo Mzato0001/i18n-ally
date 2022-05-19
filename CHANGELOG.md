@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.9.9](https://github.com/Mzato0001/i18n-ally/compare/v2.9.8...v2.9.9) (2022-05-19)
+
+
+### ⚡ Features
+
+* support annotation in localefile ([af94c88](https://github.com/Mzato0001/i18n-ally/commit/af94c888ccdf0ded6d02c5d5213e9131702f001f))
+
+
+### 🐞 Bug Fixes
+
+* sapphire-i18next regexes ([e23f2c0](https://github.com/Mzato0001/i18n-ally/commit/e23f2c0d2339e62e3dc6fbe949670bec6735626b))
+
 ### [2.9.8](https://github.com/Mzato0001/i18n-ally/compare/v2.9.7...v2.9.8) (2022-05-09)
 
 
