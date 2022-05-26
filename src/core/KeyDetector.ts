@@ -125,11 +125,7 @@ export class KeyDetector {
 
     // locale file
     const localeFile = loader.files.find(f => f?.filepath === filepath)
-    // code
-    if (Global.isLanguageIdSupported(document.languageId)) {
-      keys = KeyDetector.getKeys(document)
-    }
-    else if (localeFile) {
+    if (localeFile) {
       type = 'locale'
       const parser = Global.enabledParsers.find(p => p.annotationLanguageIds.includes(document.languageId))
       if (!parser)
@@ -141,6 +137,10 @@ export class KeyDetector {
       locale = localeFile.locale
       keys = parser.annotationGetKeys(document)
         .filter(({ key }) => loader!.getTreeNodeByKey(key)?.type === 'node')
+    }
+    // code
+    else if (Global.isLanguageIdSupported(document.languageId)) {
+      keys = KeyDetector.getKeys(document)
     }
     else {
       return
